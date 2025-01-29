@@ -1,0 +1,11 @@
+<h3>Item List</h3>
+
+<div *ngFor="let item of items" class="item">
+    {{ item }}
+</div>
+
+<div *ngIf="isLoading" class="loading">
+  Carregando
+  <!-- <img src="https://media.tenor.com/1aY3WYT74iEAAAAj/cat.gif" alt="cat rolling"> -->
+  <!-- <img src="https://media.tenor.com/9zmtHZ0tIjkAAAAj/nyancat-rainbow-cat.gif" alt="nyan cat loading"> -->
+</div>
