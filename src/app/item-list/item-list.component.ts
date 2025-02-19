@@ -9,7 +9,7 @@ import { NgFor, NgIf } from '@angular/common';
   styleUrl: './item-list.component.css'
 })
 export class ItemListComponent implements OnInit {
-  items: string[] = [];
+  items: any[] = [];
   currentPage = 1;
   isLoading = false;
 
@@ -20,10 +20,12 @@ export class ItemListComponent implements OnInit {
   }
 
   loadItems() {
+    console.log('Carregando Items');
     if (this.isLoading) return;
 
     this.isLoading = true;
     this.dataService.getItems(this.currentPage).subscribe((newItems) =>{
+      console.log('item recebido');
       this.items = [...this.items, ...newItems];
       this.currentPage++;
       this.isLoading = false;
